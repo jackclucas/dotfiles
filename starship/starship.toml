@@ -1,0 +1,43 @@
+# ~/.config/starship.toml
+
+# Change the prompt symbol based on user
+[character]
+success_symbol = "[\\$](bold #bd93f9)"  # Correctly formatted string for $ symbol
+error_symbol = "[#](bold #ff5555)"     # Correctly formatted string for # symbol
+format = "$symbol "
+
+# Directory module
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "bold #8be9fd"  # Light blue for directories
+format = "[$path](bold #8be9fd)[$read_only](bold red) "
+
+# Disable all other modules
+[git_branch]
+disabled = true
+
+[git_status]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[time]
+disabled = true
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+# Command Duration module to show command duration in prompt
+[cmd_duration]
+min_time = 2000  # Show duration only if command takes more than 2 seconds
+format = "took [$duration](bold #50fa7b)"  # Set to green color
+disabled = false
+
