@@ -16,7 +16,7 @@ This script creates symbolic links for configuration files on macOS. It ensures 
 
 ### setup2.sh
 
-This script installs `nvim` and `starship`, creates symbolic links for their configuration files on servers, and updates the `.bashrc` file. It ensures that the necessary directories are created and then links the dotfiles to the appropriate locations. Additionally, it sets `TERM` to `xterm-kitty` if Kitty is available, initializes Starship, aliases `vi` and `vim` to `nvim`, and installs `packer.nvim` if it is not already installed. It then runs `:PackerSync` to install and update plugins.
+This script installs `nvim` and `starship`, creates symbolic links for their configuration files on servers, and updates the `.bashrc` file. It ensures that the necessary directories are created and then links the dotfiles to the appropriate locations. Additionally, it sets `TERM` to `xterm-kitty` if Kitty is available, initializes Starship, aliases `vi` and `vim` to `nvim`, installs `packer.nvim` if it is not already installed, and runs `:PackerSync` to install and update plugins.
 
 #### Usage
 

@@ -46,7 +46,15 @@ else
 fi
 
 # Run PackerSync to install and update plugins
-nvim --headless +PackerSync +qa
+echo "Running PackerSync..."
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+# Verify if the dracula theme is installed
+if [ -d "$HOME/.local/share/nvim/site/pack/packer/start/vim" ]; then
+    echo "Dracula theme is installed."
+else
+    echo "Dracula theme is not installed."
+fi
 
 # Update .bashrc to use kitty, initialize starship prompt, and add aliases for vi and vim
 {
