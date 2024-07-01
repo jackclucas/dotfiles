@@ -1,4 +1,3 @@
-```markdown
 # Dotfiles
 
 This repository contains my personal configuration files for various applications. These dotfiles help to set up a consistent environment across different machines, including macOS and various Proxmox servers.
@@ -15,24 +14,14 @@ This script creates symbolic links for configuration files on macOS. It ensures 
 ./setup.sh
 ```
 
-### setup.sh2
+### setup2.sh
 
-This script creates symbolic links for `nvim` and `starship` configuration files on servers. It also backs up any existing configuration files before creating the symbolic links. The hostname of the server is displayed upon completion.
-
-#### Usage
-
-```bash
-./setup.sh2
-```
-
-### update_bashrc.sh
-
-This script updates the `.bashrc` file to configure the terminal and initialize Starship. It adds the necessary lines to set `TERM` to `xterm-256color` and initializes Starship if it is installed. The script also sources the updated `.bashrc` file.
+This script installs `nvim` and `starship`, creates symbolic links for their configuration files on servers, and updates the `.bashrc` file. It ensures that the necessary directories are created and then links the dotfiles to the appropriate locations. Additionally, it sets `TERM` to `xterm-kitty` if Kitty is available, initializes Starship, and aliases `vi` and `vim` to `nvim`.
 
 #### Usage
 
 ```bash
-./update_bashrc.sh
+./setup2.sh
 ```
 
 ## Configuration Files
@@ -54,8 +43,7 @@ dotfiles/
 ├── starship/
 │   └── starship.toml
 ├── setup.sh
-├── setup.sh2
-└── update_bashrc.sh
+└── setup2.sh
 ```
 
 ## Setup
@@ -78,8 +66,7 @@ dotfiles/
    - For Proxmox servers:
 
      ```bash
-     ./setup.sh2
-     ./update_bashrc.sh
+     ./setup2.sh
      ```
 
 ## License
@@ -93,5 +80,3 @@ Contributions are welcome! Please open an issue or submit a pull request if you 
 ## Acknowledgements
 
 Special thanks to the open-source community for providing the tools and inspiration for these configurations.
-```
-
