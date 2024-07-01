@@ -8,7 +8,7 @@ BACKUP_DIR="$HOME/dotfiles_backup"
 mkdir -p "$BACKUP_DIR"
 
 # List of dotfiles to symlink
-FILES=("nvim/init.lua" "kitty/kitty.conf" "starship/starship.toml")
+FILES=("nvim/init.lua" "starship/starship.toml")
 
 # Loop through each file and create symlinks
 for FILE in "${FILES[@]}"; do
@@ -27,4 +27,5 @@ for FILE in "${FILES[@]}"; do
     ln -s "$SRC" "$DEST"
 done
 
-echo "Dotfiles setup complete!"
+HOSTNAME=$(hostname)
+echo "Dotfiles setup complete on $HOSTNAME!"
