@@ -36,6 +36,18 @@ mkdir -p ~/.config
 ln -sf ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 
+# Install packer.nvim if it is not installed
+PACKER_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+if [ ! -d "$PACKER_DIR" ]; then
+    echo "Installing packer.nvim..."
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim $PACKER_DIR
+else
+    echo "packer.nvim is already installed."
+fi
+
+# Run PackerSync to install and update plugins
+nvim --headless +PackerSync +qa
+
 # Update .bashrc to use kitty, initialize starship prompt, and add aliases for vi and vim
 {
     echo ''
@@ -54,5 +66,6 @@ ln -sf ~/dotfiles/starship/starship.toml ~/.config/starship.toml
     echo 'alias vim="nvim"'
 } >> ~/.bashrc
 
-echo "Configuration files have been linked and .bashrc updated. Please restart your terminal or run 'source ~/.bashrc' to apply changes."
+HOSTNAME=$(hostname)
+echo "Configuration files have been linked and .bashrc updated on $HOSTNAME. Please restart your terminal or run 'source ~/.bashrc' to apply changes."
 
